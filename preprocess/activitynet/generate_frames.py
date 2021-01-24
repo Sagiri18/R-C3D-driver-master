@@ -14,11 +14,11 @@ from multiprocessing import Pool
 
 FPS = 25
 EXT = '.mp4'
-VIDEO_DIR = '/media/E/ActivityNet/Videos/'
+VIDEO_DIR = '/content/R-C3D-driver-master/ActivityNet/ActivityNetVideos/'
 video_list = os.listdir(VIDEO_DIR)
-META_FILE = './activity_net.v1-3.min.json'
+META_FILE = '/content/R-C3D-driver-master/preprocess/activitynet/activity_net.v1-3.min.json'
 meta_data = json.load(open(META_FILE))
-FRAME_DIR = '/media/F/ActivityNet/frames_' + str(FPS)
+FRAME_DIR = '/content/R-C3D-driver-master/ActivityNet/ActivityNetFrames/frames_' + str(FPS)
 mkdir(FRAME_DIR)
 
 # For parallel
