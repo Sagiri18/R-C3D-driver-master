@@ -1,3 +1,4 @@
+pytorch == 0.4.0
 cython
 cffi
 opencv-python
