@@ -22,7 +22,7 @@ os.system(command1)
 
 for i in videos:
     url = video_database[i]['url']
-    command3 = "youtube-dl -f 'bestvideo[ext=mp4]' -o " + 'ActivityNetVideos/'+i+' '+url
+    command3 = "youtube-dl -f 'bestvideo[ext=mp4]' --merge-output-format mp4 -o " + 'ActivityNetVideos/'+i+' '+url
     print(command3)
     os.system(command3)
 
