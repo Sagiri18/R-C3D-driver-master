@@ -15,7 +15,7 @@ video_database = annotation['database']
 videos = annotation['database'].keys()
 
 # Download the ActivityNet videos into the ./videos folder
-command = ' mkdir ' + ' ActivityNet '
+command = ' mkdir ' + ' content ' + ' R-C3D-driver-master ' + ' ActivityNet '
 os.system(command)
 path = "/content/R-C3D-driver-master/ActivityNet"
 os.chdir(path)
