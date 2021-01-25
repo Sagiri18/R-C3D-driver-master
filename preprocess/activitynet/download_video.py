@@ -15,8 +15,6 @@ video_database = annotation['database']
 videos = annotation['database'].keys()
 
 # Download the ActivityNet videos into the ./videos folder
-command = ' mkdir ' + ' content ' + ' R-C3D-driver-master ' + ' ActivityNet '
-os.system(command)
 path = "/content/R-C3D-driver-master/ActivityNet"
 os.chdir(path)
 command1 = 'mkdir '+'ActivityNetVideos'
@@ -24,7 +22,7 @@ os.system(command1)
 
 for i in videos:
     url = video_database[i]['url']
-    command3 = 'youtube-dl -o '+'videos/'+i+' '+url
+    command3 = 'youtube-dl -o '+'ActivityNetVideos/'+i+' '+url
     print(command3)
     os.system(command3)
 
