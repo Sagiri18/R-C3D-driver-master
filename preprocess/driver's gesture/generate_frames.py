@@ -14,11 +14,11 @@ from multiprocessing import Pool
 
 FPS = 25
 EXT = '.avi'
-VIDEO_DIR = '/content/R-C3D-driver-master/ActivityNet/ActivityNetVideos/'
+VIDEO_DIR = '/content/SD/MyDrive/video'
 video_list = os.listdir(VIDEO_DIR)
-META_FILE = '/content/R-C3D-driver-master/preprocess/activitynet/activity_net.v1-3.min.json'
+META_FILE = '/content/R-C3D-driver-master/preprocess/drivers/testv1.json'
 meta_data = json.load(open(META_FILE))
-FRAME_DIR = '/content/R-C3D-driver-master/ActivityNet/ActivityNetFrames/frames_' + str(FPS)
+FRAME_DIR = '/content/R-C3D-driver-master/drivers/driversFrames/frames_' + str(FPS)
 mkdir(FRAME_DIR)
 
 # For parallel
@@ -35,7 +35,7 @@ print("{} videos needed to be extracted".format(len(file_list)))
 def ffmpeg_extract(filename, outpath):
     status = False
     outfile = os.path.join(outpath, "image_%5d.jpg")
-    command = "ffmpeg -loglevel panic -i {} -vf scale=171:128 -q:v 1 -r {} {}".format(filename, FPS, outfile)
+    command = "/usr/local/lib/python3.6/dist-packages/ffmpeg -loglevel panic -i {} -vf scale=171:128 -q:v 1 -r {} {}".format(filename, FPS, outfile)
     # hardware accelerate
     #command = "ffmpeg -loglevel panic -hwaccel cuvid -i {} -q:v 1 -r {} {}".format(filename, FPS, outfile)
     #print(command)
