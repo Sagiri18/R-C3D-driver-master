@@ -63,7 +63,7 @@ def rm(path):
             raise
 
 def ffmpeg(filename, outfile, fps):
-    command = ["ffmpeg", "-i", filename, "-q:v", "1", "-r", str(fps), outfile]
+    command = ["/usr/local/lib/python3.6/dist-packages/ffmpeg", "-i", filename, "-q:v", "1", "-r", str(fps), outfile]
     pipe = subprocess.Popen(command, stdout = subprocess.PIPE, stderr = subprocess.STDOUT)
     pipe.communicate()
 
@@ -346,7 +346,7 @@ def duration_analysis(use_per=True):
     (20, 0.00500150045013504),
     (23, 0.01000300090027008)]
     '''
-    META_FILE = '/content/R-C3D-driver-master/preprocess/activitynet/activity_net.v1-3.min.json'
+    META_FILE = '/content/R-C3D-driver-master/preprocess/drivers/testv1.json'
     data = json.load(open(META_FILE))
     seg_dur_counter = defaultdict(int)
     seg_num_counter = defaultdict(int)
