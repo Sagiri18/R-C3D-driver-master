@@ -63,7 +63,7 @@ def rm(path):
             raise
 
 def ffmpeg(filename, outfile, fps):
-    command = ["/usr/local/lib/python3.6/dist-packages/ffmpeg", "-i", filename, "-q:v", "1", "-r", str(fps), outfile]
+    command = ["/usr/bin/ffmpeg", "-i", filename, "-q:v", "1", "-r", str(fps), outfile]
     pipe = subprocess.Popen(command, stdout = subprocess.PIPE, stderr = subprocess.STDOUT)
     pipe.communicate()
 

@@ -35,7 +35,7 @@ print("{} videos needed to be extracted".format(len(file_list)))
 def ffmpeg_extract(filename, outpath):
     status = False
     outfile = os.path.join(outpath, "image_%5d.jpg")
-    command = "/usr/local/lib/python3.6/dist-packages/ffmpeg -loglevel panic -i {} -vf scale=171:128 -q:v 1 -r {} {}".format(filename, FPS, outfile)
+    command = "/usr/bin/ffmpeg -loglevel panic -i {} -vf scale=171:128 -q:v 1 -r {} {}".format(filename, FPS, outfile)
     # hardware accelerate
     #command = "ffmpeg -loglevel panic -hwaccel cuvid -i {} -q:v 1 -r {} {}".format(filename, FPS, outfile)
     #print(command)
