@@ -27,7 +27,7 @@ for split in ['training', 'validation']:
     for vid, vinfo in meta_data['database'].items():
         if vinfo['subset'] == split:
             # make sure the video has been downloaded.
-            vname = "v_" + vid + EXT
+            vname = vid + EXT
             if vname in video_list:
                 file_list.append((vname, split, vinfo['duration']))
 print("{} videos needed to be extracted".format(len(file_list)))    
