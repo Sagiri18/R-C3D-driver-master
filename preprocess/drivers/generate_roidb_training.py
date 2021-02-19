@@ -22,9 +22,9 @@ WINS = [LENGTH * 8]
 min_length = 3
 overlap_thresh = 0.7
 STEP = LENGTH / 4
-META_FILE = '/content/R-C3D-driver-master/preprocess/activitynet/activity_net.v1-3.min.json'
+META_FILE = '/content/R-C3D-driver-master/preprocess/drivers/testv1.json'
 data = json.load(open(META_FILE))
-FRAME_DIR = '/content/R-C3D-driver-master/ActivityNet/ActivityNetFrames/frames_'+str(FPS)
+FRAME_DIR = '/content/R-C3D-driver-master/drivers/driversFrames/frames_'+str(FPS)
 
 print ('Generate Classes')
 classes = generate_classes(data)
