@@ -67,21 +67,21 @@ def generage_frame_wraper(item):
 
     return status
 
-if __name__ == '__main__':
-#    file_list = file_list[:20]
-    start = time.time()
-
-#    for item in file_list:
-#        generage_frame_wraper(item)
-
-    n_jobs=25
-    pool = Pool(n_jobs)
-    pool.map(generage_frame_wraper, file_list)
-    pool.close()
-    pool.join()
-
-    end = time.time()
-    print("Running {} jobs, {}s per videos".format(n_jobs, (end-start)/len(file_list)))
+# if __name__ == '__main__':
+# #    file_list = file_list[:20]
+#     start = time.time()
+#
+# #    for item in file_list:
+# #        generage_frame_wraper(item)
+#
+#     n_jobs=25
+#     pool = Pool(n_jobs)
+#     pool.map(generage_frame_wraper, file_list)
+#     pool.close()
+#     pool.join()
+#
+#     end = time.time()
+#     print("Running {} jobs, {}s per videos".format(n_jobs, (end-start)/len(file_list)))
 
 # fps = 25
 #
@@ -110,6 +110,6 @@ if __name__ == '__main__':
 #         frame_size = len(os.listdir(outpath))
 #         print(filename, duration, fps, frame_size)
 #
-# generate_frame('training')
-# generate_frame('validation')
-# #generate_frame('testing')
+generate_frame('training')
+generate_frame('validation')
+#generate_frame('testing')
