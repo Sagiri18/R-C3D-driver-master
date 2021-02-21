@@ -94,7 +94,7 @@ meta_data = json.load(open(META_FILE))
 mkdir('/content/R-C3D-driver-master/drivers/driversFrames/frames')
 def generate_frame(split):
   mkdir('./frames/%s' % split)
-  for vid, vinfo in meta_data['database'].iteritems():
+  for vid, vinfo in meta_data['database'].items():
     if vinfo['subset'] == split:
       vname = [s for s in video_list if vid in s]
       if len(vname) != 0 :
