@@ -32,6 +32,7 @@ for split in ['training', 'validation']:
                 file_list.append((vname, split, vinfo['duration']))
 print("{} videos needed to be extracted".format(len(file_list)))
 
+
 def ffmpeg_extract(filename, outpath):
     status = False
     outfile = os.path.join(outpath, "image_%5d.jpg")
@@ -51,6 +52,7 @@ def ffmpeg_extract(filename, outpath):
     status = frame_size > 0
     return status, frame_size
 
+
 def generage_frame_wraper(item):
     vname, split, duration = item[0], item[1], item[2]
     vid = vname[2 : -len(EXT)]
@@ -63,25 +65,26 @@ def generage_frame_wraper(item):
     else:
         mkdir(outpath)
     status, frame_size = ffmpeg_extract(filename, outpath)
-    print (filename, duration, FPS, frame_size)
+    print(filename, duration, FPS, frame_size)
 
     return status
 
-# if __name__ == '__main__':
-# #    file_list = file_list[:20]
-#     start = time.time()
-#
-# #    for item in file_list:
-# #        generage_frame_wraper(item)
-#
-#     n_jobs=25
-#     pool = Pool(n_jobs)
-#     pool.map(generage_frame_wraper, file_list)
-#     pool.close()
-#     pool.join()
-#
-#     end = time.time()
-#     print("Running {} jobs, {}s per videos".format(n_jobs, (end-start)/len(file_list)))
+
+if __name__ == '__main__':
+    file_list = file_list[:20]
+    # start = time.time()
+
+    for item in file_list:
+       generage_frame_wraper(item)
+
+    # n_jobs=25
+    # pool = Pool(n_jobs)
+    # pool.map(generage_frame_wraper, file_list)
+    # pool.close()
+    # pool.join()
+    #
+    # end = time.time()
+    # print("Running {} jobs, {}s per videos".format(n_jobs, (end-start)/len(file_list)))
 
 # fps = 25
 #
@@ -110,6 +113,6 @@ def generage_frame_wraper(item):
 #         frame_size = len(os.listdir(outpath))
 #         print(filename, duration, fps, frame_size)
 #
-generage_frame_wraper('training')
-generage_frame_wraper('validation')
-#generate_frame('testing')
+# generage_frame_wraper('training')
+# generage_frame_wraper('validation')
+# generate_frame('testing')
