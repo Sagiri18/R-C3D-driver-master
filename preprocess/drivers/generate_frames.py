@@ -110,6 +110,6 @@ def generage_frame_wraper(item):
 #         frame_size = len(os.listdir(outpath))
 #         print(filename, duration, fps, frame_size)
 #
-generate_frame('training')
-generate_frame('validation')
+generage_frame_wraper('training')
+generage_frame_wraper('validation')
 #generate_frame('testing')
