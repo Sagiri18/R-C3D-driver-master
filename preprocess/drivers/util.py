@@ -366,3 +366,10 @@ def duration_analysis(use_per=True):
             vid_num = sum(seg_num_counter.values())
             seg_num_counter = {k:100.0*v/vid_num for k,v in seg_num_counter.items()}
     return sorted(seg_dur_counter.items()), sorted(seg_num_counter.items())
+
+def rm(path):
+  try:
+    shutil.rmtree(path)
+  except OSError as e:
+    if e.errno != errno.ENOENT:
+      raise
