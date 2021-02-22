@@ -128,6 +128,7 @@ def train_net(tdcnn_demo, dataloader, optimizer, args):
     start = time.time()
         
     data_start = time.time()
+    recordtxt = open('/content/R-C3D-driver-master/record.txt', "a+")
     for step, (video_data, gt_twins, num_gt) in enumerate(dataloader):
         video_data = video_data.cuda()
         gt_twins = gt_twins.cuda()
@@ -164,7 +165,7 @@ def train_net(tdcnn_demo, dataloader, optimizer, args):
             print("\t\t\tfg/bg=(%d/%d), gt_twins: %d, time cost: %f" % (fg_cnt, bg_cnt, gt_cnt, end-start))
             print("\t\t\trpn_cls: %.4f, rpn_twin: %.4f, rcnn_cls: %.4f, rcnn_twin %.4f" \
                           % (loss_rpn_cls, loss_rpn_twin, loss_rcnn_cls, loss_rcnn_twin))
-            print("one step data time: %.4f" % (data_time))                          
+            print("one step data time: %.4f" % (data_time), file = recordtxt)
             if args.use_tfboard:
                 info = {
                 'loss': loss_temp,
