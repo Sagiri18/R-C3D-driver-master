@@ -13,7 +13,7 @@ LOG="output/${NET_DIR}/${DATASET}/train_log_${i}.txt.`date +'%Y-%m-%d_%H-%M-%S'`
 exec &> >(tee -a "$LOG")
 echo Logging output to "$LOG"
 
-python /content/R-C3D-driver-master/trainval_net.py/trainval_net.py \
+python /content/R-C3D-driver-master/trainval_net.py \
   --net ${NET_DIR} \
   --dataset ${DATASET} \
   ${EXTRA_ARGS}

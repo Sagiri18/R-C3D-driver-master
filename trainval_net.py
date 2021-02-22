@@ -38,7 +38,7 @@ def parse_args():
     Parse input arguments
     """
     parser = argparse.ArgumentParser(description='Train a R-C3D network')
-    parser.add_argument('--dataset', dest='dataset',default='drivers', type=str, choices=['thumos14', 'activitynet'],
+    parser.add_argument('--dataset', dest='dataset',default='drivers', type=str, choices=['drivers', 'activitynet'],
                       help='training dataset')
     parser.add_argument('--net', dest='net',default='c3d', type=str, choices=['c3d', 'res18', 'res34', 'res50', 'eco'],
                       help='main network c3d, i3d, res34, res50')
@@ -118,7 +118,8 @@ class sampler(Sampler):
         return self.num_data
 
 def get_roidb(path):
-    data = pickle.load(open(path, 'rb'))
+    data = pickle.load(open('/content/train_data_25fps_flipped.pkl', 'rb'))
+    #data = pickle.load(open(path, 'rb'))
     return data
 
 def train_net(tdcnn_demo, dataloader, optimizer, args):
