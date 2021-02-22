@@ -38,7 +38,7 @@ def parse_args():
     Parse input arguments
     """
     parser = argparse.ArgumentParser(description='Train a R-C3D network')
-    parser.add_argument('--dataset', dest='dataset',default='thumos14', type=str, choices=['thumos14', 'activitynet'],
+    parser.add_argument('--dataset', dest='dataset',default='drivers', type=str, choices=['thumos14', 'activitynet'],
                       help='training dataset')
     parser.add_argument('--net', dest='net',default='c3d', type=str, choices=['c3d', 'res18', 'res34', 'res50', 'eco'],
                       help='main network c3d, i3d, res34, res50')
@@ -48,7 +48,7 @@ def parse_args():
                       help='number of epochs to train')
     parser.add_argument('--disp_interval', default=100, type=int,
                       help='number of iterations to display')    
-    parser.add_argument('--save_dir', default="./models",nargs=argparse.REMAINDER,
+    parser.add_argument('--save_dir', default="/content/R-C3D-driver-master/models",nargs=argparse.REMAINDER,
                       help='directory to save models')
     parser.add_argument('--output_dir',default="./output",nargs=argparse.REMAINDER,
                       help='directory to save log file')                      
