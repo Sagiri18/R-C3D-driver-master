@@ -71,20 +71,20 @@ def generage_frame_wraper(item):
 
 
 if __name__ == '__main__':
-    file_list = file_list[:20]
-    # start = time.time()
+    # file_list = file_list[:20]
+    start = time.time()
 
-    for item in file_list:
-       generage_frame_wraper(item)
+    # for item in file_list:
+    #    generage_frame_wraper(item)
 
-    # n_jobs=25
-    # pool = Pool(n_jobs)
-    # pool.map(generage_frame_wraper, file_list)
-    # pool.close()
-    # pool.join()
-    #
-    # end = time.time()
-    # print("Running {} jobs, {}s per videos".format(n_jobs, (end-start)/len(file_list)))
+    n_jobs=25
+    pool = Pool(n_jobs)
+    pool.map(generage_frame_wraper, file_list)
+    pool.close()
+    pool.join()
+
+    end = time.time()
+    print("Running {} jobs, {}s per videos".format(n_jobs, (end-start)/len(file_list)))
 
 # fps = 25
 #

@@ -205,7 +205,12 @@ if __name__ == '__main__':
         args.imdbval_name = "val_data_25fps.pkl"
         args.num_classes = 201
         #args.set_cfgs = ['ANCHOR_SCALES', '[1,2,3,4,5,6,7,8,10,12,14,16,20,24,28,32,40,48,56,64]', 'NUM_CLASSES', args.num_classes] / stride
-        args.set_cfgs = ['ANCHOR_SCALES', '[1,1.25, 1.5,1.75, 2,2.5, 3,3.5, 4,4.5, 5,5.5, 6,7, 8,9,10,11,12,14,16,18,20,22,24,28,32,36,40,44,52,60,68,76,84,92,100]', 'NUM_CLASSES', args.num_classes]  
+        args.set_cfgs = ['ANCHOR_SCALES', '[1,1.25, 1.5,1.75, 2,2.5, 3,3.5, 4,4.5, 5,5.5, 6,7, 8,9,10,11,12,14,16,18,20,22,24,28,32,36,40,44,52,60,68,76,84,92,100]', 'NUM_CLASSES', args.num_classes]
+    elif args.dataset == "drivers":
+        args.imdb_name = "train_data_25fps_flipped.pkl"
+        args.imdbval_name = "val_data_25fps.pkl"
+        args.num_classes = 5
+        args.set_cfgs = ['ANCHOR_SCALES', '[2,4,5,6,8,9,10,12,14,16]', 'NUM_CLASSES', args.num_classes]
 
     args.cfg_file = "cfgs/{}_{}.yml".format(args.net, args.dataset)
 
