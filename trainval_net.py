@@ -213,7 +213,7 @@ if __name__ == '__main__':
         args.num_classes = 5
         args.set_cfgs = ['ANCHOR_SCALES', '[2,4,5,6,8,9,10,12,14,16]', 'NUM_CLASSES', args.num_classes]
 
-    args.cfg_file = "cfgs/{}_{}.yml".format(args.net, args.dataset)
+    args.cfg_file = "/content/R-C3D-driver-master/cfgs/{}_{}.yml".format(args.net, args.dataset)
 
     cfg.CUDA = True 
     cfg.USE_GPU_NMS = True
