@@ -13,7 +13,7 @@ LOG="output/${NET_DIR}/${EX_DIR}/test_log_${i}.txt.`date +'%Y-%m-%d_%H-%M-%S'`"
 exec &> >(tee -a "$LOG")
 echo Logging output to "$LOG"
 
-python ./test_net.py \
+python /content/R-C3D-driver-master/test_net.py \
   --net ${NET_DIR} \
   --dataset ${EX_DIR} \
   --cuda \
