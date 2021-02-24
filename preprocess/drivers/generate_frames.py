@@ -23,7 +23,7 @@ mkdir(FRAME_DIR)
 
 # For parallel
 file_list = []
-for split in ['training', 'validation']:
+for split in ['training', 'validation', 'testing']:
     for vid, vinfo in meta_data['database'].items():
         if vinfo['subset'] == split:
             # make sure the video has been downloaded.
