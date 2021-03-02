@@ -55,7 +55,7 @@ def ffmpeg_extract(filename, outpath):
 
 def generage_frame_wraper(item):
     vname, split, duration = item[0], item[1], item[2]
-    vid = vname[2 : -len(EXT)]
+    vid = vname[0 : -len(EXT)]
     filename = os.path.join(VIDEO_DIR, vname)
     outpath = os.path.join(FRAME_DIR, split, vid)
 
@@ -77,7 +77,7 @@ if __name__ == '__main__':
     # for item in file_list:
     #    generage_frame_wraper(item)
 
-    n_jobs=25
+    n_jobs=len(file_list)
     pool = Pool(n_jobs)
     pool.map(generage_frame_wraper, file_list)
     pool.close()
